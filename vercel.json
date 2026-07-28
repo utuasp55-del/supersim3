@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/api/pix",
+      "dest": "/api/pix.js"
+    },
+    {
+      "src": "/api/status",
+      "dest": "/api/status.js"
+    },
+    {
+      "src": "/api/track",
+      "dest": "/api/track.js"
+    }
+  ]
+}
