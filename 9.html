@@ -474,8 +474,16 @@ fbq('track','PageView');
       .pix-video-top{ position:relative; }
       .pix-video-top mux-player{ width:100%; aspect-ratio:16/9; display:block; --media-object-fit:cover; }
       @keyframes pixUnmutePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
-    </style>
-    <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/u858hhwswh.js" async type="module"></script><style>wistia-player[media-id='u858hhwswh']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/u858hhwswh/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style> <wistia-player media-id="u858hhwswh" aspect="1.7777777777777777"></wistia-player>
+    <script>
+      /* injeta o VÍDEO (autoplay mudo) no topo do modal de Pix — só na página 9 */
+      (function injectPixVideo() {
+        var card = document.getElementById('pix-modal-card');
+        if (!card) { return setTimeout(injectPixVideo, 120); }
+        if (card.querySelector('.pix-video-top')) return;
+        var v = document.createElement('div');
+        v.className = 'pix-video-top';
+        v.style.cssText = 'background:#100d0a;line-height:0;';
+        v.innerHTML = '<script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/u858hhwswh.js" async type="module"></script><style>wistia-player[media-id='u858hhwswh']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/u858hhwswh/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style> <wistia-player media-id="u858hhwswh" aspect="1.7777777777777777"></wistia-player>>'
           + '<div id="pixUnmute" style="position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(0,0,0,.32);">'
           +   '<div style="display:flex;flex-direction:column;align-items:center;gap:8px;background:linear-gradient(135deg,#E0850C,#A85A08);color:#fff;border-radius:20px;padding:18px 30px;box-shadow:0 14px 38px rgba(0,0,0,.6);animation:pixUnmutePulse 1.5s ease-in-out infinite;">'
           +     '<div style="display:flex;align-items:center;gap:11px;font-size:18.5px;font-weight:800;line-height:1;">'
