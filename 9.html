@@ -185,9 +185,11 @@ fbq('track','PageView');
                 <div class="approved-installments" id="installmentsText">24x de R$ 750,00</div>
             </div>
 
-            <!-- VSL Video - Mux Player -->
-            <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/u858hhwswh.js" async type="module"></script><style>wistia-player[media-id='u858hhwswh']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/u858hhwswh/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style> <wistia-player media-id="u858hhwswh" aspect="1.7777777777777777"></wistia-player>
-
+           <!-- VSL Video - Mux Player -->
+            <div class="vsl-container" id="vslContainer">
+                <script src="https://cdn.jsdelivr.net/npm/@mux/mux-player@3"></script>
+                <mux-player playback-id="K9ZWXXa3aZsabE7knebmIIOSctqKCPs02EpIsYvoeNTI" stream-type="on-demand" controls="" preload="auto" accent-color="#D2760A" metadata-video-id="supersim-seguro-prestamista" metadata-video-title="Seguro Prestamista - SuperSim" style="width:100%;aspect-ratio:16/9;border-radius:12px;--media-object-fit:cover;--time-range:none;"></mux-player>
+            </div>
             <div class="insurance-section">
                 <div class="insurance-header">
                     <div class="insurance-icon-box">
